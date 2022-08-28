@@ -1,0 +1,20 @@
+.tag {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .tagItem {
+    padding: 0 0.4rem;
+    filter: var(--blog-img-brightness);
+    transition: all 0.1s;
+    &:hover {
+      color: #49b1f5 !important;
+      transform: scale(1.2);
+    }
+  }
+}
+.cardLabel {
+  text-align: center;
+  font-size: 3rem !important;
+  display: inline-block;
+  width: 100%;
+}

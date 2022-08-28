@@ -1,0 +1,82 @@
+.mobileSidebar {
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  right: -250px;
+  transition: all 0.5s ease;
+  display: none;
+  z-index: 999;
+  background: var(--blog-sidebar-bg-color);
+  color: var(--blog-card-text-color);
+  padding-top: 25px;
+  .avatar {
+    height: 120px;
+    width: 120px;
+    padding: 0;
+    display: block;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  .actions {
+    width: 100%;
+    padding: 10px 10px 5px 10px;
+    box-sizing: border-box;
+    .actionItem {
+      width: 33%;
+      display: inline-block;
+      span {
+        display: block;
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+      .count {
+        font-size: 1.4rem;
+        font-weight: 400;
+      }
+    }
+  }
+  .menu {
+    width: 100%;
+    font-size: 1rem;
+    .menuItem {
+      width: 100%;
+      padding: 6px 30px;
+      box-sizing: border-box;
+      position: relative;
+      &::before {
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 0;
+        background: var(--blog-header-text-hover-color);
+        transition: all 0.3s ease;
+      }
+      &:hover {
+        & {
+          color: var(--blog-header-text-hover-color);
+        }
+        &::before {
+          width: 100%;
+        }
+      }
+      .menuItemLink {
+        width: 100%;
+        .icon {
+          width: 30%;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mobileSidebar {
+    display: block;
+  }
+}

@@ -1,0 +1,118 @@
+.archiveTitle {
+  position: relative;
+  margin-left: 10px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  font-size: 1.72rem;
+  &::before {
+    position: absolute;
+    top: calc(((100% - 36px) / 2));
+    left: -0.65rem;
+    z-index: 1;
+    width: 0.8rem;
+    height: 0.8rem;
+    border: 0.3rem solid #49b1f5;
+    border-radius: 50%;
+    background: var(--blog-card-bg-color);
+    content: '';
+    line-height: 0.8rem;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  &:hover::before {
+    border-color: #ff7242;
+  }
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: 2px;
+    height: calc(20px + 1rem);
+    background: #aadafa;
+    content: '';
+  }
+}
+.archive {
+  margin-left: 10px;
+  padding-left: 20px;
+  border-left: 2px solid #aadafa;
+  .archiveItem {
+    position: relative;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    &::before {
+      position: absolute;
+      left: calc(-20px - 0.5rem);
+      width: 0.45rem;
+      height: 0.45rem;
+      border: 0.2rem solid #49b1f5;
+      border-radius: 50%;
+      background: var(--blog-card-bg-color);
+      content: '';
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    }
+    &:hover::before {
+      border-color: #ff7242;
+    }
+    &.year {
+      font-size: 1.43rem;
+    }
+    .coverImg {
+      overflow: hidden;
+      width: 80px;
+      height: 80px;
+    }
+    .archiveItemInfo {
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      -o-box-flex: 1;
+      box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      padding: 0 16px;
+      .archiveItemTime {
+        color: #858585;
+        font-size: 95%;
+      }
+      .archiveItemTitle {
+        font-size: 1.1rem;
+        display: inline-block;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        transition: all 0.3s;
+        -webkit-line-clamp: 2;
+        &:hover {
+          transform: translateX(10px);
+          color: #49b1f5;
+        }
+      }
+    }
+  }
+}

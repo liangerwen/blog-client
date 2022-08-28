@@ -1,0 +1,25 @@
+.message {
+  background: var(--blog-button-bg-color);
+  padding: 10px 15px;
+  color: var(--blog-button-text-color);
+  border-radius: 4px;
+  min-width: 200px;
+  display: inline-block;
+  text-align: center;
+  animation: DownSlide 0.3s ease;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  z-index: 999;
+  transform: translateX(-50%);
+  box-shadow: var(--blog-header-shadow);
+}
+
+@keyframes DownSlide {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 20px;
+  }
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no" />
+  <meta name="referrer" content="never" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="Keywords" ontent="liangerwen,亮尔大大,React,前端,javascript,umi" />
+  <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+  <meta name="description" content="这是liangerwen's☻blog" />
+  <link rel="icon" type="image/x-icon" href="<%= context.config.publicPath %>favicon.ico" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web">
+  <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="<%= context.config.publicPath %>live2d/waifu.min.css?v=1.4.2">
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@11.3.1/styles/stackoverflow-dark.css">
+
+  <!-- require APlayer -->
+  <link rel="stylesheet" href="https://unpkg.com/aplayer/dist/APlayer.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/firacode@6.2.0/distr/fira_code.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://unpkg.com/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css">
+  <script src="https://unpkg.com/jquery@latest/dist/jquery.min.js"></script>
+  <script src="https://unpkg.com/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script>
+  <script src="https://unpkg.com/aplayer/dist/APlayer.min.js"></script>
+  <!-- require MetingJS -->
+  <script src="https://unpkg.com/meting@2.0.1/dist/Meting.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+  <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js"></script>
+  <script type="text/javascript" src="<%= context.config.publicPath %>live2d/live2d.min.js"></script>
+  <script type="text/javascript" src="<%= context.config.publicPath %>live2d/waifu-tips.min.js"></script>
+</head>
+<title>liangerwen's☻blog</title>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    cursor: url(/normal.cur), auto;
+  }
+
+  a,
+  button,
+  input[type='checkbox'] {
+    cursor: url(/link.cur), auto;
+  }
+
+  p,
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  article,
+  section,
+  strong,
+  em {
+    cursor: url(/text.cur), auto;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  .link {
+    cursor: url(/link.cur), auto;
+  }
+
+  .link * {
+    cursor: url(/link.cur), auto;
+  }
+
+  .aplayer-narrow .aplayer-body {
+    transform: translateX(-66px);
+    transition: all 0.3s;
+  }
+
+  .aplayer-body:hover {
+    transform: translateX(0);
+  }
+
+  .aplayer-lrc p {
+    font-size: 1rem !important;
+    color: var(--blog-lrc-color) !important;
+    opacity: 0 !important;
+    text-shadow: none;
+    font-family: Titillium Web, PingFang SC, Hiragino Sans GB, 'Microsoft YaHei', Helvetica Neue, Helvetica, Arial, sans-serif;
+  }
+
+  .aplayer-lrc .aplayer-lrc-current {
+    color: var(--blog-lrc-color) !important;
+    opacity: 1 !important;
+  }
+
+  .aplayer .aplayer-list ol li,
+  .aplayer .aplayer-pic {
+    cursor: url(/link.cur), auto;
+    ;
+  }
+</style>
+</head>
+
+<body>
+  <noscript>
+    <style>
+      .tip-container {
+        margin: 100px auto;
+        font-size: 16px;
+      }
+
+      .tip-container>.tip {
+        color: #616161;
+        text-align: center;
+      }
+
+      .tip-container>.tip>.tip-red {
+        color: #ff4d4f;
+        font-size: 20px;
+        font-weight: 600;
+      }
+    </style>
+    <div class="tip-container">
+      <p class="tip">You need to enable <span class="tip-red">JavaScript</span> to run this app.</p>
+      <p class="tip">您需要开启 <span class="tip-red">JavaScript</span> 才可以运行此应用。</p>
+    </div>
+  </noscript>
+  <div id="root">
+    <style>
+      .spinner {
+        width: 50px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -20px;
+        margin-left: -25px;
+        text-align: center;
+        font-size: 10px;
+      }
+
+      .spinner>div {
+        background-color: #49b1f5;
+        height: 100%;
+        width: 6px;
+        display: inline-block;
+
+        -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+        animation: sk-stretchdelay 1.2s infinite ease-in-out;
+      }
+
+      .spinner .rect2 {
+        -webkit-animation-delay: -1.1s;
+        animation-delay: -1.1s;
+      }
+
+      .spinner .rect3 {
+        -webkit-animation-delay: -1.0s;
+        animation-delay: -1.0s;
+      }
+
+      .spinner .rect4 {
+        -webkit-animation-delay: -0.9s;
+        animation-delay: -0.9s;
+      }
+
+      .spinner .rect5 {
+        -webkit-animation-delay: -0.8s;
+        animation-delay: -0.8s;
+      }
+
+      @-webkit-keyframes sk-stretchdelay {
+
+        0%,
+        40%,
+        100% {
+          -webkit-transform: scaleY(0.4)
+        }
+
+        20% {
+          -webkit-transform: scaleY(1.0)
+        }
+      }
+
+      @keyframes sk-stretchdelay {
+
+        0%,
+        40%,
+        100% {
+          transform: scaleY(0.4);
+          -webkit-transform: scaleY(0.4);
+        }
+
+        20% {
+          transform: scaleY(1.0);
+          -webkit-transform: scaleY(1.0);
+        }
+      }
+    </style>
+    <div class="spinner">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+      <div class="rect4"></div>
+      <div class="rect5"></div>
+    </div>
+  </div>
+  <script type="text/javascript" src="<%= context.config.publicPath %>live2d/autoload.js"></script>
+</body>
+
+</html>

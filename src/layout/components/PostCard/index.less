@@ -1,0 +1,41 @@
+.postItem {
+  display: flex;
+  height: 68px;
+  margin-top: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  .postImg {
+    width: 68px;
+    height: 68px;
+    margin-right: 10px;
+    overflow: hidden;
+  }
+  .postInfo {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    word-break: break-all;
+    position: relative;
+    .postTitle {
+      font-size: 1.4rem;
+      line-height: 1;
+      -webkit-line-clamp: 2;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    &:hover .postTitle {
+      color: #49b1f5;
+    }
+    .postDate {
+      font-size: 0.86rem;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+}

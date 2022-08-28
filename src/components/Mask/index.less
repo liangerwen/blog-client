@@ -1,0 +1,24 @@
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(46, 46, 46, 0.7);
+  z-index: 888;
+}
+@media screen and (min-width: 768px) {
+  .mobileMask {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .pcMask {
+    display: none;
+  }
+}
+.overflowHidden {
+  overflow: hidden;
+}

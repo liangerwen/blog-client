@@ -1,0 +1,36 @@
+.menu {
+  width: 30px;
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+  list-style: none;
+  transform: translateX(50px);
+  transition: all 0.3s ease;
+  z-index: 15;
+  .moreSetting {
+    transform: translateX(50px);
+    transition: all 0.3s ease;
+  }
+  .settingMenuItem {
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
+    background: var(--blog-button-bg-color);
+    color: var(--blog-button-text-color);
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    &:hover {
+      margin-top: 5px;
+      width: 30px;
+      height: 30px;
+      background: var(--blog-button-bg-hover-color);
+    }
+  }
+}
+.moveIn {
+  transform: translateX(0) !important;
+}
+.moveOut {
+  transform: translateX(50px) !important;
+}
